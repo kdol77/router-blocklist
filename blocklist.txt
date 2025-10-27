@@ -1,0 +1,12 @@
+address=/amzdigitaldownloads.edgesuite.net/0.0.0.0
+address=/softwareupdates.amazon.com/0.0.0.0
+address=/updates.amazon.com/0.0.0.0
+address=/amzdigital-a.akamaihd.net/0.0.0.0
+address=/device-metrics-us.amazon.com/0.0.0.0
+address=/data.amazon.com/0.0.0.0
+address=/play.googleapis.com/0.0.0.0
+address=/android.clients.google.com/0.0.0.0
+address=/ota.googlezip.net/0.0.0.0
+address=/dl.google.com/0.0.0.0
+address=/update.googleapis.com/0.0.0.0
+initial blocklist
