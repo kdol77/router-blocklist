@@ -9,4 +9,12 @@ address=/android.clients.google.com/0.0.0.0
 address=/ota.googlezip.net/0.0.0.0
 address=/dl.google.com/0.0.0.0
 address=/update.googleapis.com/0.0.0.0
-initial blocklist
+address=/storage.googleapis.com
+address=/amazonaws.com
+address=/gvt1.com
+address=/google.com
+address=/googlevideo.com
+address=/fireosupdate.amazon.com
+address=/s3amazonaws.com
+address=/a248.e.akamai.net
+29 oct 25 blocklist
