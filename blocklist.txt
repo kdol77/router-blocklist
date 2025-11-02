@@ -7,12 +7,12 @@ address=/data.amazon.com/0.0.0.0
 address=/play.googleapis.com/0.0.0.0
 address=/android.clients.google.com/0.0.0.0
 address=/ota.googlezip.net/0.0.0.0
-#address=/dl.google.com/0.0.0.0
-#address=/update.googleapis.com/0.0.0.0
-#address=/storage.googleapis.com/0.0.0.0
+address=/dl.google.com/0.0.0.0
+address=/update.googleapis.com/0.0.0.0
+address=/storage.googleapis.com/0.0.0.0
 address=/amazonaws.com/0.0.0.0
-#address=/gvt1.com/0.0.0.0
-#address=/google.com/0.0.0.0
+address=/gvt1.com/0.0.0.0
+address=/google.com/0.0.0.0
 #address=/googlevideo.com/0.0.0.0
 address=/fireosupdate.amazon.com/0.0.0.0
 address=/s3amazonaws.com/0.0.0.0
@@ -21,4 +21,4 @@ address=/s3amazonaws.com/0.0.0.0
 #address=/prod.ota-cloudfront.net/0.0.0.0
 #address=/firmwareupdates.amazon.com/0.0.0.0
 
-#2 Nov 25 blocklist5- b
+#2 Nov 25 blocklist5- c
