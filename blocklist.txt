@@ -11,7 +11,7 @@ address=/dl.google.com/0.0.0.0
 address=/update.googleapis.com/0.0.0.0
 address=/storage.googleapis.com/0.0.0.0
 address=/amazonaws.com/0.0.0.0
-#address=/gvt1.com/0.0.0.0
+address=/gvt1.com/0.0.0.0
 address=/google.com/0.0.0.0
 address=/googlevideo.com/0.0.0.0
 address=/fireosupdate.amazon.com/0.0.0.0
@@ -21,4 +21,4 @@ address=/d1s31zyz7dcc2d.cloudfront.net/0.0.0.0
 address=/prod.ota-cloudfront.net/0.0.0.0
 address=/firmwareupdates.amazon.com/0.0.0.0
 
-#2 Nov 25 blocklist5- e
+#3 Nov 25 blocklist5- a
