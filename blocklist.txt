@@ -20,5 +20,5 @@ address=/a248.e.akamai.net/0.0.0.0
 address=/d1s31zyz7dcc2d.cloudfront.net/0.0.0.0
 address=/prod.ota-cloudfront.net/0.0.0.0
 address=/firmwareupdates.amazon.com/0.0.0.0
-
+address=/*.amazon.com/0.0.0.0
 #3 Nov 25 blocklist5- a
