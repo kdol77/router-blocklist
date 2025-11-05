@@ -22,4 +22,5 @@ address=/prod.ota-cloudfront.net/0.0.0.0
 address=/firmwareupdates.amazon.com/0.0.0.0
 address=/*.amazon.com/0.0.0.0
 address=/d3p8z0ffa9t17.cloudfront.net/0.0.0.0
-#4 Nov 25 blocklist5- b
+address=/fireosupdate.amazon.co.uk/0.0.0.0
+#5 Nov 25 blocklist5- a
