@@ -1,26 +1,69 @@
-address=/amzdigitaldownloads.edgesuite.net/0.0.0.0
+# ========================================
+# BLOCKLIST v6.0 (Dual Platform Stable)
+# Date: 26 Mar 2026
+# Previous: v5.x
+# Purpose: Firestick + Thomson 270UK
+# Status: STABLE
+# Notes:
+# - Blocks Amazon Fire OS update paths
+# - Blocks Google / Android TV OTA and Play update paths
+# - Leaves common streaming/CDN domains unblocked
+# - Optional lines are commented out for later testing
+# ========================================
+
+# =========================
+# AMAZON FIRE OS (Firestick)
+# =========================
 address=/softwareupdates.amazon.com/0.0.0.0
 address=/updates.amazon.com/0.0.0.0
-#address=/amzdigital-a.akamaihd.net/0.0.0.0
+address=/fireosupdate.amazon.com/0.0.0.0
+address=/fireosupdate.amazon.co.uk/0.0.0.0
+address=/firmwareupdates.amazon.com/0.0.0.0
+
+# Amazon telemetry / metrics
 address=/device-metrics-us.amazon.com/0.0.0.0
 address=/data.amazon.com/0.0.0.0
-address=/play.googleapis.com/0.0.0.0
+
+# =========================
+# GOOGLE / ANDROID TV (Thomson 270UK)
+# =========================
 address=/android.clients.google.com/0.0.0.0
-address=/ota.googlezip.net/0.0.0.0
-address=/dl.google.com/0.0.0.0
+address=/android.googleapis.com/0.0.0.0
 address=/update.googleapis.com/0.0.0.0
-address=/storage.googleapis.com/0.0.0.0
-address=/amazonaws.com/0.0.0.0
-address=/gvt1.com/0.0.0.0
-address=/google.com/0.0.0.0
-address=/googlevideo.com/0.0.0.0
-address=/fireosupdate.amazon.com/0.0.0.0
-address=/s3amazonaws.com/0.0.0.0
-address=/a248.e.akamai.net/0.0.0.0
-address=/d1s31zyz7dcc2d.cloudfront.net/0.0.0.0
-address=/prod.ota-cloudfront.net/0.0.0.0
-address=/firmwareupdates.amazon.com/0.0.0.0
-address=/*.amazon.com/0.0.0.0
-address=/d3p8z0ffa9t17.cloudfront.net/0.0.0.0
-address=/fireosupdate.amazon.co.uk/0.0.0.0
-#5 Nov 25 blocklist5- a
+
+# OTA delivery
+address=/ota.googlezip.net/0.0.0.0
+address=/ota-cache1.googlezip.net/0.0.0.0
+address=/ota-cache2.googlezip.net/0.0.0.0
+
+# Play Store / Play services update control
+address=/play.googleapis.com/0.0.0.0
+address=/play-fe.googleapis.com/0.0.0.0
+
+# =========================
+# OPTIONAL (enable only if updates still get through)
+# Remove the leading # to activate, then test on one device first
+# =========================
+#address=/gvt1.com/0.0.0.0
+#address=/dl.google.com/0.0.0.0
+
+# =========================
+# INTENTIONALLY NOT BLOCKED
+# These can break streaming, app loading, sign-in, or playback
+# =========================
+# googlevideo.com
+# amazonaws.com
+# s3amazonaws.com
+# storage.googleapis.com
+# cloudfront.net
+# *.amazon.com
+# google.com
+
+# =========================
+# CHANGE LOG
+# v6.0:
+# - Clean dual-platform stable release
+# - Removed broad CDN / content delivery blocks
+# - Kept only update / control domains
+# - Left gvt1.com and dl.google.com commented out
+# =========================
