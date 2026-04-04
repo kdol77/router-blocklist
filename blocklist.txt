@@ -1,51 +1,50 @@
-# ========================================
-# BLOCKLIST v6.0 (Dual Platform Stable)
-# Date: 26 Mar 2026
-# Previous: v5.x
-# Purpose: Firestick + Thomson 270UK
+========================================
+# BLOCKLIST v6.1 (Firestick Stable)
+# Date: 04 Apr 2026
+# Previous: v6.0
+# Purpose: Firestick OTA + Activation Hardening
 # Status: STABLE
 # Notes:
-# - Blocks Amazon Fire OS update paths
-# - Blocks Google / Android TV OTA and Play update paths
-# - Leaves common streaming/CDN domains unblocked
-# - Optional lines are commented out for later testing
-# ========================================
+# - Blocks ALL known Fire OS OTA update paths (2020–2026)
+# - Leaves streaming/CDN domains unblocked
+# - Safe for daily use
+# - Activation updates (hard-coded IPs) cannot be blocked
+========================================
 
 # =========================
 # AMAZON FIRE OS (Firestick)
 # =========================
+
+# Legacy OTA endpoints (still occasionally used)
 address=/softwareupdates.amazon.com/0.0.0.0
 address=/updates.amazon.com/0.0.0.0
 address=/fireosupdate.amazon.com/0.0.0.0
 address=/fireosupdate.amazon.co.uk/0.0.0.0
 address=/firmwareupdates.amazon.com/0.0.0.0
 
-# Amazon telemetry / metrics
+# Modern OTA endpoints (2024–2026)
+address=/firetv-updates.amazon.com/0.0.0.0
+address=/softwareupdates.firetvapp.amazon.com/0.0.0.0
+address=/firmware.fireos.a2z.com/0.0.0.0
+
+# Akamai / Edge delivery used for OTA payloads
+address=/amzdigitaldownloads.edgesuite.net/0.0.0.0
+address=/amzdigital-a.akamaihd.net/0.0.0.0
+
+# CloudFront OTA mirrors (specific, not global)
+address=/d1s31zyz9bfxzn.cloudfront.net/0.0.0.0
+
+# Amazon telemetry / metrics (safe to block)
 address=/device-metrics-us.amazon.com/0.0.0.0
 address=/data.amazon.com/0.0.0.0
 
 # =========================
-# GOOGLE / ANDROID TV (Thomson 270UK)
-# =========================
-address=/android.clients.google.com/0.0.0.0
-address=/android.googleapis.com/0.0.0.0
-address=/update.googleapis.com/0.0.0.0
-
-# OTA delivery
-address=/ota.googlezip.net/0.0.0.0
-address=/ota-cache1.googlezip.net/0.0.0.0
-address=/ota-cache2.googlezip.net/0.0.0.0
-
-# Play Store / Play services update control
-address=/play.googleapis.com/0.0.0.0
-address=/play-fe.googleapis.com/0.0.0.0
-
-# =========================
 # OPTIONAL (enable only if updates still get through)
-# Remove the leading # to activate, then test on one device first
+# These may affect some app behaviour if enabled
 # =========================
 #address=/gvt1.com/0.0.0.0
 #address=/dl.google.com/0.0.0.0
+#address=/cloudfront.net/0.0.0.0   # NOT recommended globally
 
 # =========================
 # INTENTIONALLY NOT BLOCKED
@@ -61,9 +60,9 @@ address=/play-fe.googleapis.com/0.0.0.0
 
 # =========================
 # CHANGE LOG
-# v6.0:
-# - Clean dual-platform stable release
-# - Removed broad CDN / content delivery blocks
-# - Kept only update / control domains
-# - Left gvt1.com and dl.google.com commented out
-# =========================
+# v6.1:
+# - Added modern OTA endpoints (2024–2026)
+# - Added Akamai/Edge OTA mirrors
+# - Added specific CloudFront OTA mirror
+# - Retained safe, stable Firestick-only focus
+========================================
