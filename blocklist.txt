@@ -1,68 +1,59 @@
-========================================
-# BLOCKLIST v6.1 (Firestick Stable)
-# Date: 04 Apr 2026
-# Previous: v6.0
-# Purpose: Firestick OTA + Activation Hardening
-# Status: STABLE
+# ========================================
+# BLOCKLIST v6.2 (Firestick Stealth)
+# Date: 08 Apr 2026
+# Purpose: OTA Blocking WITHOUT Firestick Detection
+# Status: STEALTH-STABLE
 # Notes:
-# - Blocks ALL known Fire OS OTA update paths (2020–2026)
-# - Leaves streaming/CDN domains unblocked
-# - Safe for daily use
-# - Activation updates (hard-coded IPs) cannot be blocked
-========================================
+# - Removes domains Fire OS now checks for integrity
+# - Uses NXDOMAIN-style blocking (not 0.0.0.0)
+# - Avoids DNS patterns Fire OS flags
+# - Safe for Opal routers behind Firestick
+# ========================================
 
 # =========================
-# AMAZON FIRE OS (Firestick)
+# STEALTH OTA BLOCKING
 # =========================
+# These domains are still used for OTA metadata,
+# but Fire OS no longer integrity-checks them.
+# We block them using NXDOMAIN (no IP returned).
 
-# Legacy OTA endpoints (still occasionally used)
-address=/softwareupdates.amazon.com/0.0.0.0
-address=/updates.amazon.com/0.0.0.0
-address=/fireosupdate.amazon.com/0.0.0.0
-address=/fireosupdate.amazon.co.uk/0.0.0.0
-address=/firmwareupdates.amazon.com/0.0.0.0
-
-# Modern OTA endpoints (2024–2026)
-address=/firetv-updates.amazon.com/0.0.0.0
-address=/softwareupdates.firetvapp.amazon.com/0.0.0.0
-address=/firmware.fireos.a2z.com/0.0.0.0
-
-# Akamai / Edge delivery used for OTA payloads
-address=/amzdigitaldownloads.edgesuite.net/0.0.0.0
-address=/amzdigital-a.akamaihd.net/0.0.0.0
-
-# CloudFront OTA mirrors (specific, not global)
-address=/d1s31zyz9bfxzn.cloudfront.net/0.0.0.0
-
-# Amazon telemetry / metrics (safe to block)
-address=/device-metrics-us.amazon.com/0.0.0.0
-address=/data.amazon.com/0.0.0.0
+address=/fireosupdate.amazon.com/
+address=/fireosupdate.amazon.co.uk/
+address=/firmwareupdates.amazon.com/
+address=/firetv-updates.amazon.com/
+address=/softwareupdates.firetvapp.amazon.com/
+address=/firmware.fireos.a2z.com/
 
 # =========================
-# OPTIONAL (enable only if updates still get through)
-# These may affect some app behaviour if enabled
+# PAYLOAD DELIVERY (STEALTH)
 # =========================
-#address=/gvt1.com/0.0.0.0
-#address=/dl.google.com/0.0.0.0
-#address=/cloudfront.net/0.0.0.0   # NOT recommended globally
+# These hosts deliver OTA payloads via Akamai/CloudFront.
+# NXDOMAIN blocking prevents update downloads without
+# triggering Fire OS tamper detection.
+
+address=/amzdigital-a.akamaihd.net/
+address=/d1s31zyz9bfxzn.cloudfront.net/
 
 # =========================
-# INTENTIONALLY NOT BLOCKED
-# These can break streaming, app loading, sign-in, or playback
+# TELEMETRY (OPTIONAL)
 # =========================
-# googlevideo.com
-# amazonaws.com
-# s3amazonaws.com
-# storage.googleapis.com
-# cloudfront.net
+# Safe to block; does not affect streaming.
+
+address=/device-metrics-us.amazon.com/
+address=/data.amazon.com/
+
+# =========================
+# DO NOT BLOCK (IMPORTANT)
+# =========================
+# Fire OS 8.4+ integrity checks these domains.
+# Blocking them causes Firestick to restrict WAN passthrough.
+
+# softwareupdates.amazon.com
+# updates.amazon.com
+# amzdigitaldownloads.edgesuite.net
+# check.fireos.a2z.com
+# cloudfront.net (global)
 # *.amazon.com
+# amazonaws.com
 # google.com
-
-# =========================
-# CHANGE LOG
-# v6.1:
-# - Added modern OTA endpoints (2024–2026)
-# - Added Akamai/Edge OTA mirrors
-# - Added specific CloudFront OTA mirror
-# - Retained safe, stable Firestick-only focus
-========================================
+# googlevideo.com
