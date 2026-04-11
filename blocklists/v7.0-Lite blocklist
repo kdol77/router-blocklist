@@ -1,0 +1,12 @@
+# ========================================
+# BLOCKLIST v7.0 (Lite)
+# ========================================
+
+# Google telemetry
+address=/clients4.google.com/
+address=/clients2.google.com/
+address=/clients3.google.com/
+
+# Amazon telemetry
+address=/device-metrics-us.amazon.com/
+address=/data.amazon.com/
