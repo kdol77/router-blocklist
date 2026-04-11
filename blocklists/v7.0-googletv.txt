@@ -1,0 +1,38 @@
+# ========================================
+# BLOCKLIST v7.0 (Google TV - Balanced)
+# ========================================
+
+# Harmful-app reporting
+address=/safebrowsing.googleapis.com/
+address=/sb-ssl.google.com/
+address=/safebrowsing.google.com/
+
+# Play Protect scanning
+address=/android.clients.google.com/checkin/
+address=/android.clients.google.com/c2dm/
+address=/android.googleapis.com/auth/
+
+# Harmful-app verdict reporting
+address=/play.googleapis.com/play/log/
+address=/play.googleapis.com/log/batch/
+address=/play.googleapis.com/log/impressions/
+
+# Certificate revocation (safe subset)
+address=/ocsp.pki.goog/
+address=/pki-goog.l.google.com/
+
+# QUIC fallback channels
+address=/update.googleapis.com/
+address=/dl.google.com/
+address=/dl.l.google.com/
+
+# Google telemetry
+address=/clients4.google.com/
+address=/clients2.google.com/
+address=/clients3.google.com/
+address=/connectivitycheck.gstatic.com/
+address=/connectivitycheck.android.com/
+
+# Google VPN detection
+address=/geoip.googleapis.com/
+address=/geolocation.googleapis.com/
