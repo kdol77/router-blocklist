@@ -1,0 +1,27 @@
+# ========================================
+# BLOCKLIST v7.0 (Firestick - Amazon TV)
+# ========================================
+
+# Fire OS OTA blocking
+address=/fireosupdate.amazon.com/
+address=/fireosupdate.amazon.co.uk/
+address=/firmwareupdates.amazon.com/
+address=/firetv-updates.amazon.com/
+address=/softwareupdates.firetvapp.amazon.com/
+address=/firmware.fireos.a2z.com/
+
+# OTA payload mirrors
+address=/amzdigital-a.akamaihd.net/
+address=/d1s31zyz9bfxzn.cloudfront.net/
+
+# Amazon telemetry
+address=/device-metrics-us.amazon.com/
+address=/device-metrics-eu.amazon.com/
+address=/data.amazon.com/
+address=/telemetry.amazon.com/
+address=/app-analytics.amazon.com/
+
+# Amazon VPN detection
+address=/checkip.amazonaws.com/
+address=/device-provisioning.amazon.com/
+address=/device-auth.amazon.com/
