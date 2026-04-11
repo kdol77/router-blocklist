@@ -1,0 +1,133 @@
+# ========================================
+# BLOCKLIST v7.0 (Firestick Stealth)
+# Date: 08 Apr 2026
+# Purpose: OTA Blocking WITHOUT Firestick Detection
+# Status: STEALTH-STABLE
+# Notes:
+# - Removes domains Fire OS now checks for integrity
+# - Uses NXDOMAIN-style blocking (not 0.0.0.0)
+# - Avoids DNS patterns Fire OS flags
+# - Safe for Opal routers behind Firestick
+# ========================================
+
+# =========================
+# STEALTH OTA BLOCKING
+# =========================
+# These domains are still used for OTA metadata,
+# but Fire OS no longer integrity-checks them.
+# We block them using NXDOMAIN (no IP returned).
+
+address=/fireosupdate.amazon.com/
+address=/fireosupdate.amazon.co.uk/
+address=/firmwareupdates.amazon.com/
+address=/firetv-updates.amazon.com/
+address=/softwareupdates.firetvapp.amazon.com/
+address=/firmware.fireos.a2z.com/
+
+# =========================
+# PAYLOAD DELIVERY (STEALTH)
+# =========================
+# These hosts deliver OTA payloads via Akamai/CloudFront.
+# NXDOMAIN blocking prevents update downloads without
+# triggering Fire OS tamper detection.
+
+address=/amzdigital-a.akamaihd.net/
+address=/d1s31zyz9bfxzn.cloudfront.net/
+
+# =========================
+# TELEMETRY (OPTIONAL)
+# =========================
+# Safe to block; does not affect streaming.
+
+address=/device-metrics-us.amazon.com/
+address=/data.amazon.com/
+
+# =========================
+# DO NOT BLOCK (IMPORTANT)
+# =========================
+# Fire OS 8.4+ integrity checks these domains.
+# Blocking them causes Firestick to restrict WAN passthrough.
+
+# softwareupdates.amazon.com
+# updates.amazon.com
+# amzdigitaldownloads.edgesuite.net
+# check.fireos.a2z.com
+# cloudfront.net (global)
+# *.amazon.com
+# amazonaws.com
+# google.com
+# googlevideo.com
+
+# ========================================
+# BLOCKLIST v7.0 (Firestick - Amazon TV)
+# ========================================
+
+# Fire OS OTA blocking
+address=/fireosupdate.amazon.com/
+address=/fireosupdate.amazon.co.uk/
+address=/firmwareupdates.amazon.com/
+address=/firetv-updates.amazon.com/
+address=/softwareupdates.firetvapp.amazon.com/
+address=/firmware.fireos.a2z.com/
+
+# OTA payload mirrors
+address=/amzdigital-a.akamaihd.net/
+address=/d1s31zyz9bfxzn.cloudfront.net/
+
+# Amazon telemetry
+address=/device-metrics-us.amazon.com/
+address=/device-metrics-eu.amazon.com/
+address=/data.amazon.com/
+address=/telemetry.amazon.com/
+address=/app-analytics.amazon.com/
+
+# Amazon VPN detection
+address=/checkip.amazonaws.com/
+address=/device-provisioning.amazon.com/
+address=/device-auth.amazon.com/
+
+# ========================================
+# BLOCKLIST v7.0 (Google TV - Balanced)
+# ========================================
+# Harmful-app reporting
+address=/safebrowsing.googleapis.com/
+address=/sb-ssl.google.com/
+address=/safebrowsing.google.com/
+# Play Protect scanning
+address=/android.clients.google.com/checkin/
+address=/android.clients.google.com/c2dm/
+address=/android.googleapis.com/auth/
+# Harmful-app verdict reporting
+address=/play.googleapis.com/play/log/
+address=/play.googleapis.com/log/batch/
+address=/play.googleapis.com/log/impressions/
+# Certificate revocation (safe subset)
+address=/ocsp.pki.goog/
+address=/pki-goog.l.google.com/
+# QUIC fallback channels
+address=/update.googleapis.com/
+address=/dl.google.com/
+address=/dl.l.google.com/
+# Google telemetry
+address=/clients4.google.com/
+address=/clients2.google.com/
+address=/clients3.google.com/
+address=/connectivitycheck.gstatic.com/
+address=/connectivitycheck.android.com/
+# Google VPN detection
+address=/geoip.googleapis.com/
+address=/geolocation.googleapis.com/
+
+# ========================================
+# BLOCKLIST v7.0 (Lite)
+# ========================================
+
+# Google telemetry
+address=/clients4.google.com/
+address=/clients2.google.com/
+address=/clients3.google.com/
+
+# Amazon telemetry
+address=/device-metrics-us.amazon.com/
+address=/data.amazon.com/
+
