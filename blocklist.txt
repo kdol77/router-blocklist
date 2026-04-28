@@ -1,59 +1,32 @@
-# ========================================
-# BLOCKLIST v6.2 (Firestick Stealth)
-# Date: 08 Apr 2026
-# Purpose: OTA Blocking WITHOUT Firestick Detection
-# Status: STEALTH-STABLE
-# Notes:
-# - Removes domains Fire OS now checks for integrity
-# - Uses NXDOMAIN-style blocking (not 0.0.0.0)
-# - Avoids DNS patterns Fire OS flags
-# - Safe for Opal routers behind Firestick
-# ========================================
+# --- Amazon Fire OS Update Blocking (Baseline Safe) ---
 
-# =========================
-# STEALTH OTA BLOCKING
-# =========================
-# These domains are still used for OTA metadata,
-# but Fire OS no longer integrity-checks them.
-# We block them using NXDOMAIN (no IP returned).
+address=/fireosupdate.amazon.com/0.0.0.0
+address=/fireosupdate.amazon.co.uk/0.0.0.0
+address=/firmwareupdates.amazon.com/0.0.0.0
+address=/firetv-updates.amazon.com/0.0.0.0
+address=/softwareupdates.firetvapp.amazon.com/0.0.0.0
+address=/firmware.fireos.a2z.com/0.0.0.0
 
-address=/fireosupdate.amazon.com/
-address=/fireosupdate.amazon.co.uk/
-address=/firmwareupdates.amazon.com/
-address=/firetv-updates.amazon.com/
-address=/softwareupdates.firetvapp.amazon.com/
-address=/firmware.fireos.a2z.com/
+# --- Core Amazon Update Services ---
+address=/updates.amazon.com/0.0.0.0
+address=/softwareupdates.amazon.com/0.0.0.0
+address=/amzdigitaldownloads.edgesuite.net/0.0.0.0
 
-# =========================
-# PAYLOAD DELIVERY (STEALTH)
-# =========================
-# These hosts deliver OTA payloads via Akamai/CloudFront.
-# NXDOMAIN blocking prevents update downloads without
-# triggering Fire OS tamper detection.
+# --- OTA & Device Management ---
+address=/device-metrics-us.amazon.com/0.0.0.0
+address=/dcape-na.amazon.com/0.0.0.0
+address=/dcp.amazon.com/0.0.0.0
 
-address=/amzdigital-a.akamaihd.net/
-address=/d1s31zyz9bfxzn.cloudfront.net/
+# --- Logging / Telemetry (optional but safe) ---
+address=/fls-na.amazon.com/0.0.0.0
+address=/log.amazon.com/0.0.0.0
+address=/clientmetrics.amazon.com/0.0.0.0
 
-# =========================
-# TELEMETRY (OPTIONAL)
-# =========================
-# Safe to block; does not affect streaming.
+# --- Fire TV Specific ---
+address=/mas-ext.amazon.com/0.0.0.0
+address=/mas.amazon.com/0.0.0.0
 
-address=/device-metrics-us.amazon.com/
-address=/data.amazon.com/
+# --- CDN endpoints commonly used for updates ---
+address=/cloudfront.net/0.0.0.0
+address=/akamaihd.net/0.0.0.0
 
-# =========================
-# DO NOT BLOCK (IMPORTANT)
-# =========================
-# Fire OS 8.4+ integrity checks these domains.
-# Blocking them causes Firestick to restrict WAN passthrough.
-
-# softwareupdates.amazon.com
-# updates.amazon.com
-# amzdigitaldownloads.edgesuite.net
-# check.fireos.a2z.com
-# cloudfront.net (global)
-# *.amazon.com
-# amazonaws.com
-# google.com
-# googlevideo.com
