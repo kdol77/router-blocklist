@@ -1,32 +1,36 @@
-# --- Amazon Fire OS Update Blocking (Baseline Safe) ---
+# ========================================
+# BLOCKLIST v7.0 (Firestick Stealth)
+# Purpose: OTA Blocking WITHOUT Detection
+# Method: NXDOMAIN (no IP returned)
+# ========================================
 
-address=/fireosupdate.amazon.com/0.0.0.0
-address=/fireosupdate.amazon.co.uk/0.0.0.0
-address=/firmwareupdates.amazon.com/0.0.0.0
-address=/firetv-updates.amazon.com/0.0.0.0
-address=/softwareupdates.firetvapp.amazon.com/0.0.0.0
-address=/firmware.fireos.a2z.com/0.0.0.0
+# =========================
+# STEALTH OTA BLOCKING
+# =========================
+address=/fireosupdate.amazon.com/
+address=/fireosupdate.amazon.co.uk/
+address=/firmwareupdates.amazon.com/
+address=/firetv-updates.amazon.com/
+address=/softwareupdates.firetvapp.amazon.com/
+address=/firmware.fireos.a2z.com/
 
-# --- Core Amazon Update Services ---
-address=/updates.amazon.com/0.0.0.0
-address=/softwareupdates.amazon.com/0.0.0.0
-address=/amzdigitaldownloads.edgesuite.net/0.0.0.0
+# =========================
+# PAYLOAD DELIVERY (TARGETED)
+# =========================
+address=/amzdigital-a.akamaihd.net/
+address=/d1s31zyz9bfxzn.cloudfront.net/
 
-# --- OTA & Device Management ---
-address=/device-metrics-us.amazon.com/0.0.0.0
-address=/dcape-na.amazon.com/0.0.0.0
-address=/dcp.amazon.com/0.0.0.0
+# =========================
+# TELEMETRY (SAFE)
+# =========================
+address=/device-metrics-us.amazon.com/
+address=/data.amazon.com/
 
-# --- Logging / Telemetry (optional but safe) ---
-address=/fls-na.amazon.com/0.0.0.0
-address=/log.amazon.com/0.0.0.0
-address=/clientmetrics.amazon.com/0.0.0.0
-
-# --- Fire TV Specific ---
-address=/mas-ext.amazon.com/0.0.0.0
-address=/mas.amazon.com/0.0.0.0
-
-# --- CDN endpoints commonly used for updates ---
-address=/cloudfront.net/0.0.0.0
-address=/akamaihd.net/0.0.0.0
-
+# =========================
+# IMPORTANT NOTES
+# =========================
+# DO NOT ADD:
+# - 0.0.0.0 entries
+# - broad domains (amazonaws.com, cloudfront.net, googlevideo.com)
+# - softwareupdates.amazon.com
+# - updates.amazon.com
