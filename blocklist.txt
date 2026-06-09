@@ -1,36 +1,48 @@
-# ========================================
-# BLOCKLIST v7.0 (Firestick Stealth)
-# Purpose: OTA Blocking WITHOUT Detection
-# Method: NXDOMAIN (no IP returned)
-# ========================================
-
-# =========================
-# STEALTH OTA BLOCKING
-# =========================
-address=/fireosupdate.amazon.com/
-address=/fireosupdate.amazon.co.uk/
-address=/firmwareupdates.amazon.com/
-address=/firetv-updates.amazon.com/
-address=/softwareupdates.firetvapp.amazon.com/
-address=/firmware.fireos.a2z.com/
-
-# =========================
-# PAYLOAD DELIVERY (TARGETED)
-# =========================
-address=/amzdigital-a.akamaihd.net/
-address=/d1s31zyz9bfxzn.cloudfront.net/
-
-# =========================
-# TELEMETRY (SAFE)
-# =========================
-address=/device-metrics-us.amazon.com/
-address=/data.amazon.com/
-
-# =========================
-# IMPORTANT NOTES
-# =========================
-# DO NOT ADD:
-# - 0.0.0.0 entries
-# - broad domains (amazonaws.com, cloudfront.net, googlevideo.com)
-# - softwareupdates.amazon.com
-# - updates.amazon.com
+======================================
+BLOCKLIST v7.1 (Firestick + Google TV Stealth)
+Purpose: OTA Blocking WITHOUT Detection
+Method: NXDOMAIN (no IP returned)
+======================================
+=========================
+FIRESTICK OTA BLOCKING
+=========================
+address=/fireosupdate.amazon.com/ address=/fireosupdate.amazon.co.uk/ address=/firmwareupdates.amazon.com/ address=/firetv-updates.amazon.com/ address=/softwareupdates.firetvapp.amazon.com/ address=/firmware.fireos.a2z.com/
+=========================
+FIRESTICK PAYLOAD DELIVERY (TARGETED)
+=========================
+address=/amzdigital-a.akamaihd.net/ address=/d1s31zyz9bfxzn.cloudfront.net/
+=========================
+FIRESTICK TELEMETRY (SAFE)
+=========================
+address=/device-metrics-us.amazon.com/ address=/data.amazon.com/
+======================================
+GOOGLE TV / THOMSON 270UK OTA BLOCKING
+======================================
+GOOGLE OTA SERVERS
+(Primary update channels)
+=========================
+address=/ota.googlezip.net/ address=/ota-cache1.googlezip.net/ address=/ota-cache2.googlezip.net/ address=/update.googleapis.com/ address=/android.googleapis.com/
+=========================
+AMLOGIC FOTA SERVERS
+(Used by Thomson / StreamView)
+=========================
+address=/fota-ota.s3.amazonaws.com/ address=/fota-ota-bundle.s3.amazonaws.com/
+=========================
+STREAMVIEW / THOMSON OTA
+(Region-specific OEM update endpoints)
+=========================
+address=/update.streamview.at/ address=/thomson.streamview.at/
+======================================
+IMPORTANT NOTES
+======================================
+DO NOT ADD:
+- play.googleapis.com (breaks Play Store)
+- gvt1.com (breaks app updates)
+- dl.google.com (breaks system components)
+- googlevideo.com (breaks YouTube/streaming)
+- cloudfront.net (global CDN)
+- amazonaws.com (global CDN)
+- broad domains of any kind
+This list blocks OTA updates ONLY.
+Streaming, DRM, Play Store, and apps remain fully functional.
+======================================
